@@ -90,25 +90,25 @@ npm install
 ## 📚 Documentation 
 
 *Demonstration* :
-![Créer un cours](post-course.JPG)
+![Créer un cours](post_course.png)
 
 ### Lister les cours
 *GET* /api/courses
 
 *Demonstration* :
-![Lister les cours](get-courses.JPG)
+![Lister les cours](getcourses.png)
 
 ### Consulter un cours
 *GET* /api/courses/:id
 
 *Demonstration* :
-![Consulter un cours](get-course.JPG)
+![Consulter un cours](getcourse.png)
 
 ### Supprimer un cours
 *DELETE* /api/courses/:id
 
 *Demonstration* :
-![Consulter un cours](deleteCourse.JPG)
+![Consulter un cours](deletecourse.png)
 
 
 
