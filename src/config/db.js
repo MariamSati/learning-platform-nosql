@@ -29,6 +29,19 @@ async function connectMongo() {
 async function connectRedis() {
   // TODO: Implémenter la connexion Redis
   // Gérer les erreurs et les retries
+  try {
+    redisClient = redis.createClient({
+      url: config.redis.uri,
+    });
+    redisClient.on('error', (error) => {
+      console.error('Redis connection error:', error);
+    });
+    await redisClient.connect();
+    console.log('Redis connected successfully!');
+  } catch (error) {
+    console.error('Error connecting to Redis:', error);
+    process.exit(1); // Exit on failure
+  }
 }
 
 // Export des fonctions et clients
