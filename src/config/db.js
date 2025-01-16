@@ -45,6 +45,28 @@ async function connectRedis() {
 }
 
 // Export des fonctions et clients
+function closeConnections() {
+  if (mongoClient) {
+    mongoClient.close().then(() => console.log('MongoDB connection closed.'));
+  }
+  if (redisClient) {
+    redisClient.quit().then(() => console.log('Redis connection closed.'));
+  }
+}
+// Handle process termination
+process.on('SIGINT', () => {
+  closeConnections();
+  process.exit(0);
+});
+process.on('SIGTERM', () => {
+  closeConnections();
+  process.exit(0);
+});
+// Export connections and database
 module.exports = {
   // TODO: Exporter les clients et fonctions utiles
+  connectMongo,
+  connectRedis,
+  getMongoDb: () => db,
+  getRedisClient: () => redisClient,
 };
