@@ -87,25 +87,6 @@ npm install
 
 ---
 
-## ❓ Réponses aux questions posées dans les commentaires
-
-### Pourquoi créer un module séparé pour les connexions aux bases de données ?
-Pour centraliser la gestion des connexions, améliorer la réutilisabilité du code, et simplifier le maintien et le débogage de l'application.
-
-### Comment gérer proprement la fermeture des connexions ?
-En écoutant les événements système (comme `process.on('SIGINT')`) pour fermer les connexions avec des méthodes comme `client.close()` pour MongoDB et `client.quit()` pour Redis.
-
-### Pourquoi est-il important de valider les variables d'environnement au démarrage ?
-Pour éviter des erreurs inattendues pendant l'exécution de l'application en s'assurant que toutes les variables essentielles sont bien définies.
-
-### Quelle est la différence entre un contrôleur et une route ?
-Une route définit l'URL et la méthode HTTP pour accéder à une fonctionnalité, tandis qu'un contrôleur contient la logique métier qui est exécutée lorsque la route est appelée.
-
-### Pourquoi créer des services séparés ?
-Pour centraliser et réutiliser la logique métier, faciliter la maintenance et réduire la duplication de code.
-
----
-
 ## 📚 Documentation 
 
 *Demonstration* :
