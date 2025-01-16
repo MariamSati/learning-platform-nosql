@@ -63,3 +63,21 @@ async function cacheData(key, data, ttl) {
   module.exports = {
     // TODO: Exporter les fonctions utilitaires
   };
+}
+/**
+ * Close the Redis connection gracefully.
+ */
+async function closeRedis() {
+  if (redisClient) {
+    await redisClient.quit();
+    console.log('Redis connection closed');
+  }
+}
+// Export utility functions
+module.exports = {
+  connectRedis,
+  cacheData,
+  getCachedData,
+  deleteCache,
+  closeRedis,
+};
